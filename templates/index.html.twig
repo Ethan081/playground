@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+ <h1>Hello, c est connectee.</h1>
+    {% for element in parcs %}
+    <h1>{{ element.name }}</h1>
+    <h2>{{ element.rating}}</h2>
+    {% endfor %}
+
+{% endblock %}
