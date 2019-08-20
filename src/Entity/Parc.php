@@ -69,6 +69,8 @@ class Parc
      */
     private $fos_user;
 
+
+
     public function __construct()
     {
         $this->amenities = new ArrayCollection();
@@ -76,6 +78,7 @@ class Parc
         $this->accessibility = new ArrayCollection();
         $this->age_suitability = new ArrayCollection();
         $this->fos_user = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -272,4 +275,5 @@ class Parc
 
         return $this;
     }
+
 }
