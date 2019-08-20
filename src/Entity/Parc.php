@@ -69,6 +69,11 @@ class Parc
      */
     private $fos_user;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Pictures", mappedBy="parc")
+     */
+    private $picture;
+
 
 
     public function __construct()
@@ -78,6 +83,7 @@ class Parc
         $this->accessibility = new ArrayCollection();
         $this->age_suitability = new ArrayCollection();
         $this->fos_user = new ArrayCollection();
+        $this->picture = new ArrayCollection();
 
     }
 
@@ -271,6 +277,37 @@ class Parc
     {
         if ($this->fos_user->contains($fosUser)) {
             $this->fos_user->removeElement($fosUser);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Pictures[]
+     */
+    public function getPicture(): Collection
+    {
+        return $this->picture;
+    }
+
+    public function addPicture(Pictures $picture): self
+    {
+        if (!$this->picture->contains($picture)) {
+            $this->picture[] = $picture;
+            $picture->setParc($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Pictures $picture): self
+    {
+        if ($this->picture->contains($picture)) {
+            $this->picture->removeElement($picture);
+            // set the owning side to null (unless already changed)
+            if ($picture->getParc() === $this) {
+                $picture->setParc(null);
+            }
         }
 
         return $this;

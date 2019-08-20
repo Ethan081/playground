@@ -21,6 +21,11 @@ class Pictures
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Parc", inversedBy="picture")
+     */
+    private $parc;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +39,18 @@ class Pictures
     public function setName(?string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getParc(): ?Parc
+    {
+        return $this->parc;
+    }
+
+    public function setParc(?Parc $parc): self
+    {
+        $this->parc = $parc;
 
         return $this;
     }
