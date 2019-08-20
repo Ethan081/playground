@@ -74,6 +74,16 @@ class Parc
      */
     private $picture;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $rating;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $favoris;
+
 
 
     public function __construct()
@@ -309,6 +319,30 @@ class Parc
                 $picture->setParc(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRating(): ?int
+    {
+        return $this->rating;
+    }
+
+    public function setRating(?int $rating): self
+    {
+        $this->rating = $rating;
+
+        return $this;
+    }
+
+    public function getFavoris(): ?bool
+    {
+        return $this->favoris;
+    }
+
+    public function setFavoris(?bool $favoris): self
+    {
+        $this->favoris = $favoris;
 
         return $this;
     }
