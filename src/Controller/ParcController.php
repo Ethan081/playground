@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Form\ParcType;
 use App\Repository\ParcRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,7 +23,19 @@ class ParcController extends AbstractController
             [
                 'parcs'=>$parcs
             ]);
+    }
 
+    /**
+     * @Route("/new/parc", name="new_parc")
+     */
+    public function newParc(){
+        $form = $this->createForm(ParcType::class);
+
+        return $this->render('form_parc.html.twig',
+            [
+                'parcForm'=> $form->createView()
+
+            ]);
     }
 
 }
