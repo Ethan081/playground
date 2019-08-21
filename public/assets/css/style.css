@@ -1,3 +1,57 @@
 body{
-    background-color: #f4f4;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+
+}
+.resp{
+    width:100%;
+    height:auto;
+}
+
+.card-parc {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 1px solid black;
+    margin: 10px 0;
+    display: flex;
+}
+.card-image{
+    width:25%;
+    border: 1px solid yellow;
+}
+.card-article{
+    width: 100%;
+    border: 1px solid blue;
+    width:70%;
+    margin-left: 10px;
+}
+.card-rating{
+    width: 100%;
+    border: 1px solid red;
+    margin-left: 10px;
+}
+.card-info{
+    width: 100%;
+    flex-direction: column;
+}
+
+.logo{
+    width:50%;
+
+}
+.logoHeader{
+    width: 30%;
+}
+.navbar{
+    height: 100px;
+    background: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.boite{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
 }

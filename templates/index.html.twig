@@ -2,10 +2,27 @@
 
 
 {% block body %}
- <h1>Hello, c est connectee.</h1>
-    {% for element in parcs %}
-    <h1>{{ element.name }}</h1>
-    <h2>{{ element.rating}}</h2>
-    {% endfor %}
+    <div class="container">
 
+        <div class="map">
+            <img src="https://via.placeholder.com/640x640" alt="" class="resp">
+        </div>
+        {% for element in parcs %}
+            <div class="card-parc">
+                <div class="card-image">
+                    <img src="{{ asset('assets/img/jardin_notre_dame_de_la_foi.jpg') }}" alt="" class="resp">
+                </div>
+                <div class="card-info">
+                    <div class="card-article">
+                        <h2>{{ element.name }}</h2>
+
+                    </div>
+                    <div class="card-rating">
+                        <h3>{{ element.rating}}</h3>
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
