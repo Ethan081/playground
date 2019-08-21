@@ -22,7 +22,7 @@ class Pictures
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Parc", inversedBy="picture")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Parc", inversedBy="pictures")
      */
     private $parc;
 

@@ -70,7 +70,7 @@ class Parc
     private $fos_user;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Pictures", mappedBy="parc")
+     * @ORM\OneToMany(targetEntity="App\Entity\Pictures", mappedBy="parcs")
      */
     private $picture;
 

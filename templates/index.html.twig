@@ -10,7 +10,11 @@
         {% for element in parcs %}
             <div class="card-parc">
                 <div class="card-image">
-                    <img src="{{ asset('assets/img/jardin_notre_dame_de_la_foi.jpg') }}" alt="" class="resp">
+
+{#                    {{ dump(element.picture) }}#}
+                    {% for picture in images %}
+                        <img src="{{ asset('assets/img') }}/{{picture.name }}" alt="" class="resp">
+                    {% endfor %}
                 </div>
                 <div class="card-info">
                     <div class="card-article">
@@ -21,7 +25,6 @@
                         <h3>{{ element.rating}}</h3>
                     </div>
                 </div>
-
             </div>
         {% endfor %}
     </div>
